@@ -13,6 +13,7 @@ project_dir = Path(__file__).resolve().parents[0]
 df = pd.read_csv(project_dir / "data/processed/jobs.csv")
 
 app = dash.Dash(__name__)
+server = app.server
 
 fig = px.line(df, x="year", y="jobCount",
                     color="name", title ="Math job counts")
